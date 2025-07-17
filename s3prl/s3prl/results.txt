@@ -1,0 +1,21 @@
+Detailed Prediction Comparison Summary:
+                   File1        File2   Difference
+Mean            4.889474     4.755263     0.134211
+Std Dev         3.066239     3.157936     2.189782
+Sample Size  1140.000000  1140.000000  1140.000000
+Min             0.000000     0.000000    -9.000000
+Max             9.000000     9.000000     9.000000
+
+T-test Results:
+t-statistic: 1.0290
+p-value: 0.3036
+Degrees of freedom: 1139
+
+Effect Size:
+Cohen's d: 0.0431
+
+Confidence Interval (95%):
+Lower bound: 0.0069
+Upper bound: 0.2615
+
+Correlation between predictions: 0.7528
