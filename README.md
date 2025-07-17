@@ -48,8 +48,41 @@ Our model performs well on both domains and shows improved few-shot generalizati
 
 3. **Prepare Data**
    - [LibriSpeech](https://www.openslr.org/12)
-   - [Music4All](https://github.com/MTG/Music4All)
+   - [Music4All](https://sites.google.com/view/contact4music4all)
 
-4. **Run Training**
-   ```bash
-   python train.py --config configs/multi_distill.yaml
+4. **Implementation**
+
+   - **Change to code directory:**  
+     ```bash
+     cd s3prl/s3prl
+     ```
+
+   - **Pretrain (multi-teacher distillation):**  
+     ```bash
+     python run_pretrain.py -u multi_distiller \
+       -g config_model.yaml \
+       -n exp_name
+     ```
+     - `-u`: upstream distiller name  
+     - `-g`: config yaml file  
+     - `-n`: experiment name  
+
+   - **Downstream training / evaluation:**  
+     ```bash
+     python run_downstream.py -m train \
+       -u multi_distiller_local \
+       -d speech_commands \
+       -s states-epoch-12.ckpt \
+       -g config_model.yaml \
+       -n exp_name \
+       -o "config.downstream_expert.datarc.speech_commands_root=/path/to/your/speech_commands/"
+     ```
+     - `-m`: mode (`train` for training)
+     - `-u`: upstream setting
+     - `-d`: downstream task name
+     - `-s`: pretrained checkpoint path
+     - `-g`: config yaml for the checkpoint
+     - `-n`: experiment name
+     - `-o`: override (e.g., dataset path)
+
+   > For more details on arguments and usage, please refer to the [s3prl repository](https://github.com/s3prl/s3prl) and its documentation.
