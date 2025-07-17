@@ -51,6 +51,7 @@ Our model performs well on both domains and shows improved few-shot generalizati
    - [Music4All](https://sites.google.com/view/contact4music4all)
 
 4. **Implementation**
+   *Multi-Distillation related code can be found in* `s3prl/s3prl/pretrain/multi_distiller`.
 
    - **Change to code directory:**  
      ```bash
