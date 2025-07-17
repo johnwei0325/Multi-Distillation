@@ -52,7 +52,7 @@ Our model performs well on both domains and shows improved few-shot generalizati
 
 4. **Implementation**
    
-   *Multi-Distillation related code can be found in* `s3prl/s3prl/pretrain/multi_distiller`.
+   Multi-Distillation related code can be found in `s3prl/s3prl/pretrain/multi_distiller`.
 
    - **Change to code directory:**  
      ```bash
